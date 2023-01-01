@@ -16,26 +16,24 @@
 
         <TextView
             android:id="@+id/txtRestaurantDistance"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:text="Restaurant Name" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:text="RESTAURANT NAME" />
 
         <TextView
             android:id="@+id/txtRestaurantDensity"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Density"
-            android:textAlignment="center" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="DENSITY(%)" />
 
         <TextView
             android:id="@+id/txtRestaurantName"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Distance"
-            android:textAlignment="center" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="DISTANCE(km)" />
     </LinearLayout>
 
     <LinearLayout

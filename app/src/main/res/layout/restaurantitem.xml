@@ -8,17 +8,17 @@
         android:id="@+id/txtRestaurantsName"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_weight="3" />
+        android:layout_weight="6" />
 
     <TextView
         android:id="@+id/txtRestaurantsDensity"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_weight="1" />
+        android:layout_weight="3" />
 
     <TextView
         android:id="@+id/txtRestaurantsDistance"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_weight="1" />
+        android:layout_weight="3" />
 </LinearLayout>
