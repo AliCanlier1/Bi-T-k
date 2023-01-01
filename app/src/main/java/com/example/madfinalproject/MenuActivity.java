@@ -8,10 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -26,11 +29,17 @@ public class MenuActivity extends AppCompatActivity {
     FirebaseFirestore db;
     Button location;
     Button reservation;
+    String reference;
+    TextView restaurantName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         recyclerView = findViewById(R.id.menusRecyclerView);
+        Intent intent = getIntent();
+        reference = intent.getStringExtra("reference");
+        restaurantName = findViewById(R.id.txtRestaurantNames);
+        restaurantName.setText(intent.getStringExtra("name"));
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         db =FirebaseFirestore.getInstance();
@@ -49,7 +58,8 @@ public class MenuActivity extends AppCompatActivity {
         });
     }
     private void EventChangeListener() {
-        db.collection("RestaurantMenus")
+        db.collection("Restaurants").
+                document(reference).collection("Menus")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @SuppressLint("NotifyDataSetChanged")
                     @Override

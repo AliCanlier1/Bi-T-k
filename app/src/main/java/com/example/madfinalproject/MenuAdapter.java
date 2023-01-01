@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder>{
+    ArrayList<String> references;
     Context context;
     ArrayList<Menu> menuArrayList;
 
@@ -23,7 +24,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder>{
     @NonNull
     @Override
     public MenuAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.restaurantitem,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.menuitem,parent,false);
         return new MenuAdapter.MyViewHolder(v);
     }
 

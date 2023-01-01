@@ -19,7 +19,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.My
     @NonNull
     @Override
     public RestaurantAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.useritem,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.restaurantitem,parent,false);
         return new MyViewHolder(v, iRestaurantInterface);
     }
     @Override
@@ -36,8 +36,6 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.My
 
     @Override
     public void onItemClicked(int position) {
-
-
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
@@ -45,9 +43,9 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.My
         TextView name, surname, age;
         public MyViewHolder(@NonNull View itemView, IRestaurantInterface iRestaurantInterface) {
             super(itemView);
-            name = itemView.findViewById(R.id.txtName);
-            surname = itemView.findViewById(R.id.txtSurname);
-            age = itemView.findViewById(R.id.txtAge);
+            name = itemView.findViewById(R.id.txtRestaurantsName);
+            surname = itemView.findViewById(R.id.txtRestaurantsDensity);
+            age = itemView.findViewById(R.id.txtRestaurantsDistance);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
