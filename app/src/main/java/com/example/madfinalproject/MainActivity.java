@@ -38,8 +38,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnSignIn, btnSignUp,btnThread;
     ImageView imageView;
     EditText emailText, passwordText;
-    ImageView threadImage;
-    String url = "https://upload.wikimedia.org/wikipedia/tr/8/86/Fenerbah%C3%A7e_SK.png";
+    String url = "https://r.resimlink.com/YZLptAjGS.png";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -33,6 +33,7 @@ public class MenuActivity extends AppCompatActivity {
     Button reservation;
     String reference;
     TextView restaurantName;
+    String a;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +42,7 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = getIntent();
         reference = intent.getStringExtra("reference");
         restaurantName = findViewById(R.id.txtRestaurantNames);
+        a= intent.getStringExtra("name");
         restaurantName.setText(intent.getStringExtra("name"));
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -51,6 +53,15 @@ public class MenuActivity extends AppCompatActivity {
         EventChangeListener();
         location = findViewById(R.id.btnLocation);
         reservation = findViewById(R.id.btnReservation);
+        reservation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, Reservation.class);
+                intent.putExtra("reference",reference);
+                intent.putExtra("restaurantName",a);
+                startActivity(intent);
+            }
+        });
         location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
