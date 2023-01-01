@@ -1,15 +1,19 @@
 package com.example.madfinalproject;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -44,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         btnSignIn = findViewById(R.id.btnSignIn);
         btnSignUp = findViewById(R.id.btnSignUp);
         btnThread = findViewById(R.id.btnThread);
-        imageView = findViewById(R.id.imageView);
+        imageView = findViewById(R.id.image_view);
         emailText = findViewById(R.id.txtUserName);
         passwordText = findViewById(R.id.txtPassword);
         auth = FirebaseAuth.getInstance();
@@ -53,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     public void signInClick(View view){
         String email = emailText.getText().toString();
         String password = passwordText.getText().toString();
+
         if(email.equals("")||password.equals(""))
             Toast.makeText(this,"Please enter email and password!",Toast.LENGTH_SHORT).show();
         else{
@@ -100,4 +105,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+
+
+
 }

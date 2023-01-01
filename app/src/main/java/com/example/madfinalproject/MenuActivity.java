@@ -1,11 +1,13 @@
 package com.example.madfinalproject;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -72,4 +74,6 @@ public class MenuActivity extends AppCompatActivity {
                         }}
                 });
     }
+
+
 }
